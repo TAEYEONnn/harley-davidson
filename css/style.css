@@ -1005,7 +1005,7 @@ body {
 #section05 .page05 .video {
   position: absolute;
   top: 50%;
-  left: 80%;
+  left: 50%;
   transform: translate(-50%, -50%);
 }
 
@@ -1165,7 +1165,7 @@ body {
 /* section 07 style */
 #section07 {
   height: 500vh;
-  background: #dbdbdb;
+  background: #f3f3f3;
   /*background: black;*/
   z-index: 200;
   overflow: initial;
@@ -1220,7 +1220,7 @@ body {
 /* section 08 style */
 #section08 {
   height: 1662px;
-  background: #dbdbdb;
+  background: #f3f3f3;
   z-index: 100;
 }
 
@@ -1296,7 +1296,7 @@ body {
 /* section 09 style */
 #section09 {
   height: 1517px;
-  background: #dbdbdb;
+  background: #f3f3f3;
   z-index: 100;
 }
 
