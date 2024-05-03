@@ -92,23 +92,23 @@ window.addEventListener('DOMContentLoaded', function () {
     scrollTrigger: {
       trigger: '.trigger-this-the',
       start: 'top top', // 앞의 값 : trigger에 적용되어 있는 요소의 위치, 뒤의 값 : 화면의 표시 위치
-      end: '105.5% bottom', // 앞의 값 : trigger에 적용되어 있는 요소의 위치, 뒤의 값 : 화면의 표시 위치
+      end: '106.2% bottom', // 앞의 값 : trigger에 적용되어 있는 요소의 위치, 뒤의 값 : 화면의 표시 위치
       scrub: true,
       pin: true, // trigger에 지정된 요소의 크기만큼 화면을 고정
       // markers: true,
     },
   });
 
-  gsap.to('#section02 .the img', {
-    y: -30,
-    scrollTrigger: {
-      trigger: '#section02',
-      start: 'top top',
-      end: 'bottom bottom',
-      scrub: true,
-      // markers: true,
-    },
-  });
+  // gsap.to('#section02 .the img', {
+  //   y: -30,
+  //   scrollTrigger: {
+  //     trigger: '#section02',
+  //     start: 'top top',
+  //     end: 'bottom bottom',
+  //     scrub: true,
+  //     // markers: true,
+  //   },
+  // });
 
   gsap.to('.fix-this-2', {
     scrollTrigger: {
@@ -172,7 +172,7 @@ window.addEventListener('DOMContentLoaded', function () {
       start: 'top top',
       end: 'bottom bottom',
       pin: true,
-      scrub: true,
+      scrub: 1,
       // markers: true,
     },
   });
@@ -183,7 +183,8 @@ window.addEventListener('DOMContentLoaded', function () {
     trigger: '#section03',
     start: '-3000 top',
     end: 'bottom bottom',
-    scrub: 3,
+    scrub: 1,
+
     // markers: true,
   });
 
@@ -192,12 +193,12 @@ window.addEventListener('DOMContentLoaded', function () {
   sec03.from('#section03 .middle_text', { x: -2400, y: 0, rotation: 0 }, 0);
   sec03.from(
     '#section03 .title01',
-    { x: 2300, y: 0, rotation: 0, duration: 1 },
+    { x: 2300, y: 0, rotation: 0, duration: 2 },
     0
   );
   sec03.from(
     '#section03 .title02',
-    { x: -3300, y: 0, rotation: 0, duration: 1 },
+    { x: -3300, y: 0, rotation: 0, duration: 2 },
     0
   );
   sec03.from(
@@ -468,8 +469,8 @@ window.addEventListener('DOMContentLoaded', function () {
 
   gsap.to('#section06 .visual_container .title', {
     scale: 50,
-    y: -12000,
-    x: 4000,
+    y: -13000,
+    x: 3750,
     scrollTrigger: {
       trigger: '#section06',
       start: '1600 top',
@@ -479,7 +480,7 @@ window.addEventListener('DOMContentLoaded', function () {
     },
   });
 
-  //section 06 hydra   move animation
+  //section 06 hydra move animation
   gsap.to('#section06 .visual_container .hydra', {
     x: 1800,
     scrollTrigger: {
@@ -521,7 +522,7 @@ window.addEventListener('DOMContentLoaded', function () {
   gsap.to('.fix-this-7', {
     scrollTrigger: {
       trigger: '.trigger-this-7',
-      start: 'top top',
+      start: '-400 top',
       end: 'bottom bottom',
       pin: true,
       scrub: true,
@@ -585,8 +586,8 @@ window.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  section0809Title('#section08', '-300');
-  section0809Title('#section09', '-500');
+  section0809Title('#section08', '-500');
+  section0809Title('#section09', '-700');
 
   //secion 091 title text slide animation
   gsap.to('.fix-this-91', {
@@ -618,9 +619,9 @@ window.addEventListener('DOMContentLoaded', function () {
 
   //secion 091 night image animation
   gsap.to('#section091 .night', {
-    x: -2500,
-    y: -200,
-    rotation: 20,
+    x: -2000,
+    y: 200,
+    // rotation: 20,
     scrollTrigger: {
       trigger: '#section091',
       start: '500 top',
@@ -738,7 +739,7 @@ window.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  animateTextSec10('400', '#section10 .page03');
+  animateTextSec10('1200', '#section10 .page03');
   animateTextSec10('4500', '#section10 .page05 .container01 .title');
   animateTextSec10('5500', '#section10 .page05 .container02 .title');
   animateTextSec10('6500', '#section10 .page05 .container03 .title');
@@ -757,4 +758,57 @@ window.addEventListener('DOMContentLoaded', function () {
 
   scrollMouse('.odd', -innerHeight);
   scrollMouse('.even', innerHeight);
+
+  // scroll move to each section
+  const sections = $('[data-idx]');
+
+  for (let i = 0; i < sections.length; i++) {
+    $('.indicators').append(`<span class="point-${i}"></span>`);
+
+    ScrollTrigger.create({
+      trigger: sections[i],
+      start: 'top 50%',
+      end: 'bottom 50%',
+      toggleClass: {
+        targets: `.point-${i}`,
+        className: 'current',
+      },
+    });
+  }
+
+  $('.indicators span').click(function () {
+    const idx = $(this).index();
+    const sectionTop = sections[idx].offsetTop;
+
+    container.scrollTo(0, sectionTop, 600, {
+      easing: easing.easeInOutCirc, // 스크롤 이징 함수
+    });
+  });
+
+  const menuPositions = $('[menu-pos]');
+
+  $('[menu-list]').click(function () {
+    const idx = $(this).index();
+    const menuListTop = menuPositions[idx].offsetTop;
+
+    container.scrollTo(0, menuListTop, 600, {
+      easing: easing.easeInOutCirc, // 스크롤 이징 함수
+    });
+
+    $('#menu').fadeToggle().toggleClass('on');
+  });
+
+  $('.menu4').click(function () {
+    // console.log($('#section10'));
+    const lastTop = $('#section10').offsetTop;
+
+    const more = $(window).width() * 3;
+
+    console.log(lastTop + more);
+    container.scrollTo(0, lastTop + more, 600, {
+      easing: easing.easeInOutCirc, // 스크롤 이징 함수
+    });
+
+    $('#menu').fadeToggle().toggleClass('on');
+  });
 });

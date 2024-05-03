@@ -2,6 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css"
+      integrity="sha512-/VYneElp5u4puMaIp/4ibGxlTd2MV3kuUIroR3NSQjS2h9XKQNebRQiyyoQKeiGE9mRdjSCIZf9pb7AVJ8DhCg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/plugin/reset.css" />
     <link rel="stylesheet" href="css/plugin/common.css" />
@@ -11,6 +19,16 @@
   </head>
 
   <body>
+    <div class="totop startPoint">
+      <span><i class="ri-arrow-up-line"></i></span>
+    </div>
+
+    <div class="indicators">
+      <!-- <span class="current"></span>
+      <span></span>
+      <span></span> -->
+    </div>
+
     <div id="cursor">
       <div class="dot"></div>
     </div>
@@ -52,7 +70,7 @@
       </div>
 
       <div class="visual_container">
-        <div class="menu01">
+        <div class="menu01" menu-list>
           <div class="title cursor_effect">
             <img src="img/menu/title01.png" alt="" />
           </div>
@@ -66,7 +84,7 @@
           </div>
         </div>
 
-        <div class="menu02">
+        <div class="menu02" menu-list>
           <div class="title cursor_effect">
             <img src="img/menu/title02.png" alt="" />
           </div>
@@ -80,7 +98,7 @@
           </div>
         </div>
 
-        <div class="menu03">
+        <div class="menu03" menu-list>
           <div class="title cursor_effect">
             <img src="img/menu/title03.png" alt="" />
           </div>
@@ -148,7 +166,7 @@
 
     <!-- Main Sections -->
     <section class="container" id="container">
-      <section id="section01">
+      <section id="section01" data-idx>
         <div class="trigger-this-1">
           <div class="fix-this-1">
             <div class="main_title main_title_01">
@@ -173,7 +191,7 @@
         </div>
       </section>
 
-      <section id="section02">
+      <section id="section02" data-idx>
         <div class="trigger-this-the">
           <div class="the">
             <img src="img/scroll_01/section2/the.png" alt="" />
@@ -263,49 +281,41 @@
         </div>
       </section>
 
-      <section id="section03" class="">
+      <section id="section03" class="" data-idx>
         <div class="trigger-this-3">
           <div class="fix-this-3">
             <div class="visual_container">
-              <div class="r">
-                <img src="img/scroll_01/section03/R.png" alt="" />
-              </div>
+              <div class="title">
+                <div class="r">
+                  <img src="img/scroll_01/section03/R.png" alt="" />
+                </div>
 
-              <div class="right_text">
-                <div class="title01">
-                  <img src="img/scroll_01/section03/title01.png" alt="" />
+                <div class="right_text">
+                  <div class="title01">
+                    <img src="img/scroll_01/section03/title01.png" alt="" />
+                  </div>
+                  <div class="title02">
+                    <img src="img/scroll_01/section03/title02.png" alt="" />
+                  </div>
                 </div>
-                <div class="title02">
-                  <img src="img/scroll_01/section03/title02.png" alt="" />
-                </div>
+
                 <div class="today">
                   <img src="img/scroll_01/section03/Today.png " alt="" />
                   <div class="box"></div>
-
-                  <style>
-                    .box {
-                      position: absolute;
-                      left: 0;
-                      bottom: 30px;
-                      width: 100%;
-                      height: 30px;
-                      background: #f26a2b;
-                      z-index: 1;
-                    }
-                  </style>
                 </div>
+              </div>
 
-                <div class="middle_text">
-                  <img src="img/scroll_01/section03/middle_txt.png" alt="" />
-                </div>
+              <div class="middle_text">
+                <img src="img/scroll_01/section03/middle_txt.png" alt="" />
+              </div>
 
+              <div class="longtext">
                 <div class="long_text1">
-                  <img src="img/scroll_01/section03/long1.png" alt="" />
-                  <img src="img/scroll_01/section03/long2.png" alt="" />
+                  <img src="img/scroll_01/section03/long.png" alt="" />
                 </div>
 
                 <div class="long_text2">
-                  <img src="img/scroll_01/section03/long3.png" alt="" />
+                  <img src="img/scroll_01/section03/long2.png" alt="" />
                 </div>
               </div>
             </div>
@@ -313,7 +323,7 @@
         </div>
       </section>
 
-      <section id="section04">
+      <section id="section04" data-idx>
         <div class="trigger-this-4">
           <div class="fix-this-4">
             <div class="bg">
@@ -352,7 +362,7 @@
         </div>
       </section>
 
-      <section id="section05" class="">
+      <section id="section05" class="" data-idx menu-pos>
         <div class="trigger-this-5">
           <div class="underbar">
             <img src="img/scroll_01/section05/underbar.png" alt="" />
@@ -503,7 +513,7 @@
         </div>
       </section>
 
-      <section id="section06">
+      <section id="section06" data-idx menu-pos>
         <div class="trigger-this-6">
           <div class="fix-this-6">
             <div class="visual_container">
@@ -562,7 +572,7 @@
         </div>
       </section>
 
-      <section id="section07">
+      <section id="section07" data-idx>
         <div class="trigger-this-7">
           <div class="fix-this-7">
             <div class="video">
@@ -572,7 +582,6 @@
                 loop
                 muted
               ></video>
-              <!--            <img src="img/scroll_03/section04/video.jpg" alt="">-->
             </div>
 
             <div class="side">
@@ -587,7 +596,7 @@
         </div>
       </section>
 
-      <section id="section08">
+      <section id="section08" data-idx>
         <div class="visual_container">
           <div class="title">
             <div class="title01">
@@ -610,7 +619,9 @@
           </div>
 
           <div class="img">
-            <div><img src="img/scroll_03/section04/img01.jpg" alt="" /></div>
+            <div class="img01">
+              <img src="img/scroll_03/section04/img01.jpg" alt="" />
+            </div>
             <div>
               <div class="dot3">
                 <img src="img/scroll_03/section04/dot.png" alt="" />
@@ -622,13 +633,15 @@
                 <img src="img/scroll_03/section04/txt01.png" alt="" />
                 <img src="img/scroll_03/section04/txt01_1.png" alt="" />
               </div>
-              <div><img src="img/scroll_03/section04/img02.jpg" alt="" /></div>
+              <div class="img02">
+                <img src="img/scroll_03/section04/img02.jpg" alt="" />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="section09">
+      <section id="section09" data-idx>
         <div class="visual_container">
           <div class="title_dot">
             <div class="dot3">
@@ -664,7 +677,9 @@
               <div><img src="img/scroll_03/section04/txt02.png" alt="" /></div>
             </div>
 
-            <div><img src="img/scroll_03/section04/img04.jpg" alt="" /></div>
+            <div class="hydra">
+              <img src="img/scroll_03/section04/img04.jpg" alt="" />
+            </div>
           </div>
 
           <div class="superengine">
@@ -673,7 +688,7 @@
         </div>
       </section>
 
-      <section id="section091">
+      <section id="section091" data-idx menu-pos>
         <div class="trigger-this-91">
           <div class="fix-this-91">
             <div class="side">
@@ -711,7 +726,7 @@
         </div>
       </section>
 
-      <section id="section10">
+      <section id="section10" class="last" data-idx>
         <div class="trigger-this-10">
           <div class="fix-this-10">
             <div class="page page02">
@@ -798,6 +813,7 @@
               </div>
             </div>
 
+            <!-- <section id="section10" class="page page05" data-idx menu-pos> -->
             <div class="page page05">
               <div class="side">
                 <div>
@@ -862,7 +878,7 @@
                     </div>
                     <div class="spin">
                       <img
-                        src="img/scroll_04/section05/spinstar03.png"
+                        src="img/scroll_04/section05/spinstar01.png"
                         alt=""
                       />
                     </div>
@@ -879,6 +895,7 @@
                 </div>
               </div>
             </div>
+            <!-- </section> -->
 
             <div class="page page06">
               <div class="side">
@@ -968,12 +985,19 @@
     <script src="js/plugin/jquery-1.8.1.min.js"></script>
     <script src="js/plugin/parallax.js"></script>
     <script src="js/plugin/easing.js"></script>
+
+    <script>
+      var scene = document.getElementById('menu');
+      var parallax = new Parallax(scene);
+    </script>
+
+    <!-- From JSDELIVR -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <!-- <script src="js/plugin/gsap.js"></script>
     <script src="js/plugin/scrollTrigger.js"></script> -->
-    <!-- <script src="js/scrollbar.js"></script>
-    <script src="js/setting.js"></script> -->
+    <script src="js/scrollbar.js"></script>
+    <script src="js/setting.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
