@@ -1616,7 +1616,7 @@ body {
 
 /* page 04 style */
 #section10 .page04 {
-  width: 2426px;
+  width: 1200px;
   position: relative;
   display: flex;
 }
@@ -1649,7 +1649,9 @@ body {
 
 #section10 .page04 .night > video {
   position: absolute;
-  width: 2500px;
+  width: auto;
+  height: 1320px;
+  left: 507px;
 }
 
 /* page 05 style */
@@ -1661,10 +1663,10 @@ body {
 }
 
 #section10 .page05 .side {
-  width: 2400px;
+  width: 2300px;
   display: flex;
   justify-content: space-between;
-  padding-top: 440px;
+  padding-top: 550px;
   margin: 0 auto;
 }
 
@@ -1695,7 +1697,7 @@ body {
 #section10 .page05 .visual_container .title .spin {
   position: absolute;
   bottom: 9px;
-  left: -3px;
+  left: -10px;
   animation: rotate 10s linear infinite;
   transform-origin: 50% 50%;
 }
@@ -1706,15 +1708,35 @@ body {
 }
 
 #section10 .page05 .visual_container .sub:hover {
-  filter: invert(100%);
+  filter: brightness(0.7);
 }
 
 #section10 .page05 .visual_container .sub01 {
-  top: 22px;
-  right: 90px;
+  top: 13px;
+  right: 110px;
 }
 
 #section10 .page05 .visual_container .sub02 {
+  left: 35px;
+  bottom: 10px;
+}
+
+#section10 .page05 .visual_container .sub03 {
+  left: 450px;
+  bottom: 57px;
+}
+
+#section10 .page05 .visual_container .sub04 {
+  left: 38px;
+  bottom: 7px;
+}
+
+#section10 .page05 .visual_container .sub05 {
+  left: 450px;
+  bottom: 57px;
+}
+
+#section10 .page05 .visual_container .sub06 {
   left: 35px;
   bottom: 10px;
 }
@@ -1756,21 +1778,36 @@ body {
   width: 1762px;
 }
 
-#section10 .page06 .title .many {
-  width: 726px;
+#section10 .page06 .title .ltr {
+  position: relative;
+  width: 1726px;
   display: flex;
+  align-items: flex-end;
   justify-content: space-between;
-  z-index: 999;
+  z-index: 3;
+  top: -400px;
+}
+
+.live01,
+.live02,
+.to01,
+.to02,
+.ride01,
+.ride02 {
+  display: inherit;
+  align-items: inherit;
+  justify-content: inherit;
 }
 
 #section10 .page06 .title .sport {
   position: absolute;
-  bottom: 72px;
-  left: 50%;
+  bottom: -170px;
+  left: 40%;
   transform: translate(-50%, 0%);
+  z-index: 2;
 }
 
-#section10 .page06 .title .sport > img {
+#section10 .page06 .title .sport img {
   animation: up-down02 1.4s infinite ease-in-out alternate;
 }
 
@@ -1783,10 +1820,14 @@ body {
   }
 }
 
-#section10 .page06 .title .thanks {
-  width: 995px;
+#section10 .page06 .title .rtl {
+  position: relative;
+  width: 1726px;
   display: flex;
+  align-items: flex-end;
   justify-content: space-between;
+  top: -250px;
+  z-index: 1;
 }
 
 #section10 .page06 .sub {
@@ -1822,7 +1863,7 @@ body {
 #section10 .page06 .underbar {
   position: relative;
   margin: auto;
-  width: 90%;
+  width: 100%;
 }
 
 #section10 .page06 .underbar img {
@@ -1831,6 +1872,7 @@ body {
 
 #section10 .page06 .underbar .button {
   position: absolute;
+  width: 7.3%;
   right: 1px;
   top: 0;
   transition: 0.5s;
@@ -1838,5 +1880,5 @@ body {
 }
 
 #section10 .page06 .underbar .button:hover {
-  filter: invert(100%);
+  filter: brightness(0.3);
 }

@@ -35,7 +35,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
     // side image move half left and right
     const sideImgW = $('.star div:nth-child(1)').width();
-    $('.side').css('width', `calc(100% + ${sideImgW}px)`);
+    // $('.side').css('width', `calc(100% + ${sideImgW}px)`);
   });
 
   $('#menu .menu_header .ham').click(function () {
@@ -798,16 +798,20 @@ window.addEventListener('DOMContentLoaded', function () {
     $('#menu').fadeToggle().toggleClass('on');
   });
 
-  $('.menu4').click(function () {
-    // console.log($('#section10'));
-    const lastTop = $('#section10').offsetTop;
+  const slLeft = $('#section10 .page05').offset().left;
 
-    const more = $(window).width() * 3;
-
-    console.log(lastTop + more);
-    container.scrollTo(0, lastTop + more, 600, {
+  $('[data-last]').click(function () {
+    const section10Top = sections[10].offsetTop + slLeft - 550;
+    // alert(section10Top);
+    container.scrollTo(0, section10Top, 600, {
       easing: easing.easeInOutCirc, // 스크롤 이징 함수
     });
+
+    // setTimeout(() => {
+    //   $('.fix-this-10').css({
+    //     transform: `translate3d(${-slLeft}px, 0px, 0px)`,
+    //   });
+    // }, 1000);
 
     $('#menu').fadeToggle().toggleClass('on');
   });
